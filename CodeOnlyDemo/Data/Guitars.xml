@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<GuitarData>
+    <Guitar>
+        <Name>Les Paul</Name>
+        <Manufacturer>Gibson</Manufacturer>
+        <YearIntroduced>1952</YearIntroduced>
+        <LargeImageUrl>Les_Paul.jpg</LargeImageUrl>
+        <LargeImageWidth>294</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+    <Guitar>
+        <Name>Les Paul SG</Name>
+        <Manufacturer>Gibson</Manufacturer>
+        <YearIntroduced>1961</YearIntroduced>
+        <LargeImageUrl>SG_Custom_Standard.jpg</LargeImageUrl>
+        <LargeImageWidth>360</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+    <Guitar>
+        <Name>ES-335</Name>
+        <Manufacturer>Gibson</Manufacturer>
+        <YearIntroduced>1958</YearIntroduced>
+        <LargeImageUrl>ES-335.jpg</LargeImageUrl>
+        <LargeImageWidth>300</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+    <Guitar>
+        <Name>Stratocaster</Name>
+        <Manufacturer>Fender</Manufacturer>
+        <YearIntroduced>1954</YearIntroduced>
+        <LargeImageUrl>Fender_Stratocaster.jpg</LargeImageUrl>
+        <LargeImageWidth>301</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+    <Guitar>
+        <Name>Telecaster</Name>
+        <Manufacturer>Fender</Manufacturer>
+        <YearIntroduced>1950</YearIntroduced>
+        <LargeImageUrl>Fender_Telecaster.png</LargeImageUrl>
+        <LargeImageWidth>177</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+    <Guitar>
+        <Name>Jaguar</Name>
+        <Manufacturer>Feder</Manufacturer>
+        <YearIntroduced>1962</YearIntroduced>
+        <LargeImageUrl>Fender_Jaguar.jpg</LargeImageUrl>
+        <LargeImageWidth>188</LargeImageWidth>
+        <LargeImageHeight>480</LargeImageHeight>
+        <SmallImageUrl></SmallImageUrl>
+    </Guitar>
+</GuitarData>
