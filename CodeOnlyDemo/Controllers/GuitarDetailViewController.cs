@@ -16,6 +16,7 @@ namespace CodeOnlyDemo.Controllers
             View.BackgroundColor = UIColor.Black;
         }
 
+        // Comment to use for git commit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
