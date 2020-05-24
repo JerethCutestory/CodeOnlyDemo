@@ -142,12 +142,10 @@
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
         <Compile Include="SceneDelegate.cs" />
-        <Compile Include="CircleView.cs" />
         <Compile Include="UrlSessionDelegate.cs" />
         <Compile Include="TableSource.cs" />
         <Compile Include="Models\GuitarDetailModel.cs" />
         <Compile Include="Controllers\CustomViewController.cs" />
-        <Compile Include="Controllers\CircleController.cs" />
         <Compile Include="Controllers\GuitarListViewController.cs" />
         <Compile Include="Controllers\GuitarDetailViewController.cs" />
     </ItemGroup>

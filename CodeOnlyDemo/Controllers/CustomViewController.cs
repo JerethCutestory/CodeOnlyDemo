@@ -16,7 +16,6 @@ namespace CodeOnlyDemo.Controllers
         private GuitarListViewController GuitarListViewController;
         private UITextField usernameField;
         private UITextField passwordField;
-        private CircleController circleController;
         private UIBarButtonItem testButton;
         #endregion
 

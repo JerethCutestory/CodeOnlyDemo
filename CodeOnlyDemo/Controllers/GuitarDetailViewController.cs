@@ -1,5 +1,4 @@
-﻿using System;
-using CodeOnlyDemo.Models;
+﻿using CodeOnlyDemo.Models;
 using CoreGraphics;
 using UIKit;
 
@@ -9,37 +8,47 @@ namespace CodeOnlyDemo.Controllers
     {
         private readonly GuitarDetailModel _guitar;
 
+        #region ctor
         public GuitarDetailViewController(GuitarDetailModel guitar)
         {
             this._guitar = guitar;
 
             View.BackgroundColor = UIColor.Black;
         }
+        #endregion
 
-        // Comment to use for git commit
+        #region ViewDidLoad
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            nfloat height = 31.0f;
-            nfloat width = View.Bounds.Width;
+            UIImageView imageView = new UIImageView
+            {
+                Image = UIImage.FromBundle(_guitar.LargeImageUrl),
+                Frame = new CGRect(
+                    (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
+                    (int)(View.Bounds.GetMidY() - (_guitar.LargeImageHeight / 2)),
+                    _guitar.LargeImageWidth,
+                    _guitar.LargeImageHeight)
+            };
 
             UILabel label = new UILabel
             {
                 Text = $"{_guitar?.Manufacturer} {_guitar.Name} (introduced: {_guitar.YearIntroduced})",
                 TextColor = UIColor.White,
-                Frame = new CGRect(10, 110, width - 20, height),
-                AutoresizingMask = UIViewAutoresizing.FlexibleWidth
+                AutoresizingMask = UIViewAutoresizing.FlexibleWidth,
+                Lines = 1,
+                TextAlignment = UITextAlignment.Center,
+                Frame = new CGRect(
+                    0,
+                    110,
+                    View.Bounds.Width,
+                    31.0f)
             };
             label.Font.WithSize(24);
 
-            CGRect screen = UIScreen.MainScreen.Bounds;
-
-            UIImageView imageView = new UIImageView();
-            imageView.Image = UIImage.FromBundle(_guitar.LargeImageUrl);
-            imageView.Frame = new CGRect(10, 160, _guitar.LargeImageWidth, _guitar.LargeImageHeight);
-
             View.AddSubviews(new UIView[] { label, imageView });
         }
+        #endregion
     }
 }
