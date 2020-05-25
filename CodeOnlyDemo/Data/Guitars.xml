@@ -8,6 +8,7 @@
         <LargeImageWidth>294</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://www.gibson.com/Guitar/CUSQKW566/60th-Anniversary-1960-Les-Paul-Standard/V1-Deep-Cherry-Sunburst</DetailsURL>
     </Guitar>
     <Guitar>
         <Name>Les Paul SG</Name>
@@ -17,6 +18,7 @@
         <LargeImageWidth>360</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://www.gibson.com/Guitar/CUSGSY394/1963-Les-Paul-SG-Custom-Reissue-w-Maestro-Vibrola/Classic-White</DetailsURL>
     </Guitar>
     <Guitar>
         <Name>ES-335</Name>
@@ -26,6 +28,7 @@
         <LargeImageWidth>300</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://www.gibson.com/Guitar/CUSKP2119/1959-ES-335-Reissue/Vintage-Burst</DetailsURL>
     </Guitar>
     <Guitar>
         <Name>Stratocaster</Name>
@@ -35,6 +38,7 @@
         <LargeImageWidth>301</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://shop.fender.com/en-US/electric-guitars/stratocaster/tom-morello-stratocaster/0140350706.html</DetailsURL>
     </Guitar>
     <Guitar>
         <Name>Telecaster</Name>
@@ -44,6 +48,7 @@
         <LargeImageWidth>177</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://shop.fender.com/en-US/electric-guitars/telecaster/rarities-red-mahogany-top-telecaster/0176506821.html</DetailsURL>
     </Guitar>
     <Guitar>
         <Name>Jaguar</Name>
@@ -53,5 +58,6 @@
         <LargeImageWidth>188</LargeImageWidth>
         <LargeImageHeight>480</LargeImageHeight>
         <SmallImageUrl></SmallImageUrl>
+        <DetailsURL>https://shop.fender.com/en-US/electric-guitars/jaguar/kurt-cobain-jaguar-left-hand/0143021700.html</DetailsURL>
     </Guitar>
 </GuitarData>

@@ -19,6 +19,7 @@ namespace CodeOnlyDemo.Models
         public string LargeImageUrl { get; set; }
         public int LargeImageWidth { get; set; }
         public int LargeImageHeight { get; set; }
+        public string DetailsURL { get; set; }
         #endregion
     }
 
