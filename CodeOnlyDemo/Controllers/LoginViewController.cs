@@ -5,9 +5,9 @@ using UIKit;
 
 namespace CodeOnlyDemo.Controllers
 {
-    public class CustomViewController : UIViewController
+    public class LoginViewController : UIViewController
     {
-        #region Field
+        #region Fields
         public NSUrlSession session;
         public NSUrlSessionDownloadTask downloadTask;
         const string Identifier = "com.chronicpleasure.CodeOnlyDemo.BackgroundSession";
@@ -20,7 +20,7 @@ namespace CodeOnlyDemo.Controllers
         #endregion
 
         #region ctor
-        public CustomViewController()
+        public LoginViewController()
         {
             GuitarListViewController = new GuitarListViewController("Guitars");
         }
@@ -46,7 +46,7 @@ namespace CodeOnlyDemo.Controllers
             }
 
             View.BackgroundColor = UIColor.SystemYellowColor;
-            Title = "Login Custom ViewController";
+            Title = "Login";
 
             nfloat height = 31.0f;
             nfloat width = View.Bounds.Width;

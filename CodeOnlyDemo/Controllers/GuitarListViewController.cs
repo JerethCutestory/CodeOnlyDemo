@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Xml.Serialization;
@@ -24,9 +25,17 @@ namespace CodeOnlyDemo.Controllers
 
             UITableView table = new UITableView(View.Bounds); // defaults to Plain style
             table.Source = new TableSource(GetGuitarData(), this);
+            table.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
             Add(table);
         }
         #endregion
+
+        //public override void ViewLayoutMarginsDidChange()
+        //{
+        //    base.ViewLayoutMarginsDidChange();
+
+        //    Console.WriteLine("ViewLayoutMarginsDidChange was called.");
+        //}
 
         #region GetGuitarData
         private List<GuitarDetailModel> GetGuitarData()

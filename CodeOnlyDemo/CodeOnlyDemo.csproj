@@ -137,6 +137,7 @@
     <ItemGroup>
         <None Include="Info.plist" />
         <None Include="Entitlements.plist" />
+        <None Include="Notes.txt" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Main.cs" />
@@ -145,7 +146,7 @@
         <Compile Include="UrlSessionDelegate.cs" />
         <Compile Include="TableSource.cs" />
         <Compile Include="Models\GuitarDetailModel.cs" />
-        <Compile Include="Controllers\CustomViewController.cs" />
+        <Compile Include="Controllers\LoginViewController.cs" />
         <Compile Include="Controllers\GuitarListViewController.cs" />
         <Compile Include="Controllers\GuitarDetailViewController.cs" />
     </ItemGroup>
@@ -159,6 +160,7 @@
       <BundleResource Include="Resources\SG_Special.jpg" />
       <BundleResource Include="Resources\Flying_Fender_Stratocaster.jpg" />
       <BundleResource Include="Resources\SG_Custom_Standard.jpg" />
+      <BundleResource Include="Resources\SG_Standard_LG.jpg" />
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="Data\Guitars.xml" />

@@ -27,7 +27,7 @@ namespace NewSingleViewTemplate
                 WindowScene = (UIWindowScene)scene
             };
 
-            CustomViewController cvc = new CustomViewController();
+            LoginViewController cvc = new LoginViewController();
             var navController = new UINavigationController(cvc);
             Window.RootViewController = navController;
 
