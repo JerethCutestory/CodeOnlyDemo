@@ -11,9 +11,16 @@ namespace CodeOnlyDemo.Controllers
 {
     public class GuitarDetailViewController : UIViewController
     {
-        private UIScrollView _scrollView;
+        #region Fields
         private UIImageView _imageViewSG;
+
+        private UILabel _guitarLabel;
+        private UIButton _safariButton;
+        private UIButton _webviewButton;
+        private UIScrollView _scrollView;
+        private UIImageView _guitarImage;
         private readonly GuitarDetailModel _guitar;
+        #endregion
 
         #region ctor
         public GuitarDetailViewController(GuitarDetailModel guitar)
@@ -29,7 +36,7 @@ namespace CodeOnlyDemo.Controllers
         {
             base.ViewDidLoad();
 
-            UILabel label = new UILabel
+            _guitarLabel = new UILabel
             {
                 Text = $"{_guitar?.Manufacturer} {_guitar.Name} (introduced: {_guitar.YearIntroduced})",
                 TextColor = UIColor.White,
@@ -38,37 +45,37 @@ namespace CodeOnlyDemo.Controllers
                 TextAlignment = UITextAlignment.Center,
                 Frame = new CGRect(
                     0,
-                    110,
+                    36,
                     View.Bounds.Width,
                     31.0f)
             };
-            label.Font.WithSize(24);
+            _guitarLabel.Font.WithSize(24);
 
-            UIImageView imageView = new UIImageView
+            _guitarImage = new UIImageView
             {
                 Image = UIImage.FromBundle(_guitar.LargeImageUrl),
-                AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin,
+                AutoresizingMask = UIViewAutoresizing.FlexibleWidth,
                 Frame = new CGRect(
                     (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
-                    label.Frame.Bottom + 10,
+                    _guitarLabel.Frame.Bottom + 10,
                     _guitar.LargeImageWidth,
                     _guitar.LargeImageHeight)
             };
 
             NSUrl url = new NSUrl(_guitar.DetailsURL);
 
-            var webviewButton = UIButton.FromType(UIButtonType.RoundedRect);
-            webviewButton.SetTitle("WV Details", UIControlState.Normal);
-            webviewButton.BackgroundColor = UIColor.SystemBlueColor;
-            webviewButton.SetTitleColor(UIColor.White, UIControlState.Normal);
-            webviewButton.Layer.CornerRadius = 5f;
-            webviewButton.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
-            webviewButton.Frame = new CGRect(
+            _webviewButton  = UIButton.FromType(UIButtonType.RoundedRect);
+            _webviewButton.SetTitle("WV Details", UIControlState.Normal);
+            _webviewButton.BackgroundColor = UIColor.SystemBlueColor;
+            _webviewButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+            _webviewButton.Layer.CornerRadius = 5f;
+            _webviewButton.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
+            _webviewButton.Frame = new CGRect(
                 (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
-                imageView.Frame.Bottom + 20,
-                imageView.Frame.Width,
+                _guitarImage.Frame.Bottom + 20,
+                _guitarImage.Frame.Width,
                 31.0f);
-            webviewButton.TouchUpInside += (sender, e) =>
+            _webviewButton.TouchUpInside += (sender, e) =>
             {
                 WKWebView webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
                 View.AddSubview(webView);
@@ -78,39 +85,38 @@ namespace CodeOnlyDemo.Controllers
                 Console.WriteLine("WebView Details button clicked.");
             };
 
-            var safariButton = UIButton.FromType(UIButtonType.RoundedRect);
-            safariButton.SetTitle("SF Details", UIControlState.Normal);
-            safariButton.BackgroundColor = UIColor.SystemBlueColor;
-            safariButton.SetTitleColor(UIColor.White, UIControlState.Normal);
-            safariButton.Layer.CornerRadius = 5f;
-            safariButton.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
-            safariButton.Frame = new CGRect(
+            _safariButton = UIButton.FromType(UIButtonType.RoundedRect);
+            _safariButton.SetTitle("SF Details", UIControlState.Normal);
+            _safariButton.BackgroundColor = UIColor.SystemBlueColor;
+            _safariButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+            _safariButton.Layer.CornerRadius = 5f;
+            _safariButton.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
+            _safariButton.Frame = new CGRect(
                 (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
-                webviewButton.Frame.Bottom + 20,
-                imageView.Frame.Width,
+                _webviewButton.Frame.Bottom + 20,
+                _guitarImage.Frame.Width,
                 31.0f);
-            safariButton.TouchUpInside += (sender, e) =>
+            _safariButton.TouchUpInside += (sender, e) =>
             {
                 SFSafariViewController sfViewController = new SFSafariViewController(url);
+                sfViewController.ShouldAutorotate();
                 this.PresentViewController(sfViewController, true, null);
 
                 Console.WriteLine("SafariViewControllerButton Details button clicked.");
             };
 
-            //View.AddSubviews(new UIView[] { imageView });
-            //View.AddSubviews(new UIView[] { label, imageView, webviewButton, safariButton });
-
             // SG Image 864 x 1152
-            _imageViewSG = new UIImageView(UIImage.FromBundle("SG_Standard_LG.jpg"));
-            _imageViewSG.TranslatesAutoresizingMaskIntoConstraints = false;
-            _imageViewSG.Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
+            //_imageViewSG = new UIImageView(UIImage.FromBundle("SG_Standard_LG.jpg"));
+            //_imageViewSG.TranslatesAutoresizingMaskIntoConstraints = false;
+            //_imageViewSG.Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
 
             _scrollView = new UIScrollView(new RectangleF(0, 0, (float)View.Frame.Width, (float)View.Frame.Height));
-            _scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);  //_imageViewSG.Image.Size;
+            _scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
             _scrollView.MaximumZoomScale = 3f;
             _scrollView.MinimumZoomScale = .1f;
             _scrollView.TranslatesAutoresizingMaskIntoConstraints = false;
-            _scrollView.BackgroundColor = UIColor.Orange;
+            _scrollView.BackgroundColor = UIColor.SystemOrangeColor;
+            _scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
             View.AddSubview(_scrollView);
 
             _scrollView.TopAnchor.ConstraintEqualTo(View.TopAnchor, 0).Active = true;
@@ -120,31 +126,40 @@ namespace CodeOnlyDemo.Controllers
 
 
             //_imageViewSG.Center = _scrollView.Center;
-            _scrollView.AddSubview(_imageViewSG);
+            _scrollView.AddSubviews(new UIView[] { _guitarLabel, _guitarImage, _webviewButton, _safariButton }); 
 
-            _scrollView.ViewForZoomingInScrollView += (UIScrollView sv) => { return _imageViewSG; };
+            //_scrollView.ViewForZoomingInScrollView += (UIScrollView sv) => { return _imageViewSG; };
 
-            _imageViewSG.TopAnchor.ConstraintEqualTo(_scrollView.TopAnchor, 0).Active = true;
-            //_imageViewSG.WidthAnchor.ConstraintEqualTo(UIScreen.MainScreen.Bounds.Width).Active = true;
-            //_imageViewSG.HeightAnchor.ConstraintEqualTo(UIScreen.MainScreen.Bounds.Height).Active = true;
-            //_imageViewSG.TrailingAnchor.ConstraintEqualTo(_scrollView.TrailingAnchor, 0).Active = true;
-
-            //Console.WriteLine($"ViewDidLoad() - _scrollView.ContentSize WIDTH: {_scrollView.ContentSize.Width} - _scrollView.ContentSize HEIGHT: {_scrollView.ContentSize.Height}");
+            //_imageViewSG.TopAnchor.ConstraintEqualTo(_scrollView.TopAnchor, 0).Active = true;
+            ////_imageViewSG.WidthAnchor.ConstraintEqualTo(UIScreen.MainScreen.Bounds.Width).Active = true;
+            ////_imageViewSG.HeightAnchor.ConstraintEqualTo(UIScreen.MainScreen.Bounds.Height).Active = true;
+            ////_imageViewSG.TrailingAnchor.ConstraintEqualTo(_scrollView.TrailingAnchor, 0).Active = true;
         }
         #endregion
 
-        //public override void ViewDidLayoutSubviews()
-        //{
-        //    base.ViewDidLayoutSubviews();
+        #region ViewDidLayoutSubviews
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
 
-        //    //_scrollView.Frame = new RectangleF(0, 0, (float)View.Frame.Width, (float)View.Frame.Height);
-        //    //_scrollView.Frame = new CGRect(0, 0, View.Frame.Width, View.Frame.Height);
+            _guitarImage.Frame = new CGRect(
+                    (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
+                    _guitarLabel.Frame.Bottom + 10,
+                    _guitar.LargeImageWidth,
+                    _guitar.LargeImageHeight);
 
-        //    //_scrollView.ContentSize = new CGSize((float)_imageViewSG.Image.Size.Width, (float)_imageViewSG.Image.Size.Height);
-        //    ////_imageViewSG.Frame = new CGRect(0, 0, _scrollView.Frame.Size.Width, _scrollView.Frame.Size.Height);
-        //    //_imageViewSG.Center = _scrollView.Center;
+            _webviewButton.Frame = new CGRect(
+                (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
+                _guitarImage.Frame.Bottom + 20,
+                _guitarImage.Frame.Width,
+                31.0f);
 
-        //    Console.WriteLine($"ViewDidLayoutSubviews() - _scrollView.ContentSize WIDTH: {_scrollView.ContentSize.Width} - _scrollView.ContentSize HEIGHT: {_scrollView.ContentSize.Height}");
-        //}
+            _safariButton.Frame = new CGRect(
+                (int)(View.Bounds.GetMidX() - (_guitar.LargeImageWidth / 2)),
+                _webviewButton.Frame.Bottom + 20,
+                _guitarImage.Frame.Width,
+                31.0f);
+        }
+        #endregion
     }
 }

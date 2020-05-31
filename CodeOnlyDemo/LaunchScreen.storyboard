@@ -18,11 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="1"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROCK n ROLL GUITARS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="393" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="20" y="128" width="374" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="393" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" usesAttributedText="YES">
+                                <rect key="frame" x="0.0" y="111" width="414" height="46"/>
                                 <color key="textColor" systemColor="systemYellowColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
                                 <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="1"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="ROCK n ROLL GUITARS">
+                                        <attributes>
+                                            <color key="NSColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                            <font key="NSFont" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" size="24"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="591" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Flying_Fender_Stratocaster.jpg">
                                 <rect key="frame" x="52" y="248" width="310" height="240"/>

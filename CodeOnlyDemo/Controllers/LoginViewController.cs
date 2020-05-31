@@ -45,8 +45,8 @@ namespace CodeOnlyDemo.Controllers
                 session = InitBackgroundSession();
             }
 
-            View.BackgroundColor = UIColor.SystemYellowColor;
-            Title = "Login";
+            View.BackgroundColor = UIColor.SystemOrangeColor;
+            Title = "Authenticate Yourself";
 
             nfloat height = 31.0f;
             nfloat width = View.Bounds.Width;
