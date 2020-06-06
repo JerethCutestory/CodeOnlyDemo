@@ -1,6 +1,9 @@
 ﻿
 > Originally started from: https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/ios-code-only?tabs=macos
 
+> MS Docs article on UIScrollView
+https://docs.microsoft.com/en-us/dotnet/api/uikit.uiscrollview?view=xamarin-ios-sdk-12#using-a-single-large-subview
+
 Application
   Window
     Content View Hierarchy <= View Controller
@@ -12,5 +15,8 @@ Application
 > Applications with multiple screens have multiple Content View Hierarchies, each with its own View Controller
   - The application places Views in the Window to create a different Content View Hierarchy based on the screen that the user is on
 
-
+> SO article with an answer that mostly worked (long answer by axl coder):
 https://stackoverflow.com/questions/46642679/xamarin-ios-autolayout-resize-width-and-vertical-scroll-automatically-for-vario
+> SO article that didn't have any answers:
+https://stackoverflow.com/questions/35579461/xamarin-ios-uiimageview-inside-uiscrollview-displaced-after-orientation-change
+> 
