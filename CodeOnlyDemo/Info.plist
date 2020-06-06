@@ -39,7 +39,7 @@
 		<integer>2</integer>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen2</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -63,6 +63,6 @@
 	<key>CFBundleName</key>
 	<string>CodeOnlyDemo</string>
 	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen2</string>
 </dict>
 </plist>

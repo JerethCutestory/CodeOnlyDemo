@@ -22,7 +22,7 @@ namespace CodeOnlyDemo
             // Goes against best practice:
             // https://forums.xamarin.com/discussion/4858/how-do-i-delay-the-launch-image
 
-            Thread.Sleep(1500);
+            Thread.Sleep(3600);
             return true;
         }
 

@@ -133,6 +133,7 @@
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
+        <InterfaceDefinition Include="LaunchScreen2.storyboard" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -161,6 +162,7 @@
       <BundleResource Include="Resources\Flying_Fender_Stratocaster.jpg" />
       <BundleResource Include="Resources\SG_Custom_Standard.jpg" />
       <BundleResource Include="Resources\SG_Standard_LG.jpg" />
+      <BundleResource Include="Resources\acoustic-guitar-1839379_1920.jpg" />
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="Data\Guitars.xml" />
